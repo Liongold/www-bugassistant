@@ -212,8 +212,7 @@ body {
 }
 
 .error {
-    border: 2px solid #FF0000;
-    background-color: #FFD8D8;
+    border: 1px solid #FF0000;
     color: #FF0000;
     border-radius: 5px;
 }
@@ -225,8 +224,7 @@ body {
 }
 
 .success {
-    border: 2px solid #228B22;
-    background-color: #ADEBAD;
+    border: 1px solid #228B22;
     color: #228B22;
     border-radius: 5px;
 }

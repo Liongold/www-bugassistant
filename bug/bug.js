@@ -84,7 +84,8 @@
         },
 
         error_clear: function() {
-            $('.feedback_container').hide();
+            $('.feedback_container').css('display', 'none');
+            $('.feedback_container').removeClass('warning error success');
         },
 
         error_set: function(message, domain) {
@@ -92,15 +93,15 @@
                 message = message.msg;
             else if (domain == "Bugzilla")
                 message = BugzillaErrorStrings(message.code);
-            $('.feedback_container').show();
             $('.feedback_container').addClass('error');
             $('.feedback_container').text(message);
+            $('.feedback_container').show();
         },
         
         set_warning: function(heading, text) {
-            $('.feedback_container').show();
             $('.feedback_container').addClass('warning');
             $('.feedback_container').html('<h1>'+heading+'</h1><p>'+text+'</p>');
+            $('.feedback_container').show();
         },
         
         url: 'https://www.libreoffice.org/bugzilla',
@@ -171,7 +172,7 @@
                     if($.bug.BSALang == "en") {
                         $.bug.set_warning('WWW Bugs are being moved to Redmine', 'All of our WWW bugs are currently being moved to <a href="https://redmine.documentfoundation.org">our Redmine</a>. We would appreciate if you submit the bug directly through Redmine and thus we could be able to fix it faster. Thanks. ');
                     }else{
-                    	$.bug.set_warning('Les bugs WWW sont maintenant remplis sur Redmine', 'Tous nos bugs WWW sont actuellement déplacés sur <a href="https://redmine.documentfoundation.org">notre Redmine</a>>. Nous aimerions que vous soumettiez le bug directement sur Redmine, de la sorte nous pourrons le corriger plus rapidement. Merci');
+                        $.bug.set_warning('Les bugs WWW sont maintenant remplis sur Redmine', 'Tous nos bugs WWW sont actuellement déplacés sur <a href="https://redmine.documentfoundation.org">notre Redmine</a>>. Nous aimerions que vous soumettiez le bug directement sur Redmine, de la sorte nous pourrons le corriger plus rapidement. Merci');
                     }
                     $.bug.window.scrollTo(0, 255);
                 }
